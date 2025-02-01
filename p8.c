@@ -9,7 +9,6 @@
 
 char tasks[MAX_TASKS][MAX_LENGTH];
 int taskCount = 0;
-
 void addTask(const char *task) {
     if (taskCount < MAX_TASKS) {
         strcpy(tasks[taskCount++], task);

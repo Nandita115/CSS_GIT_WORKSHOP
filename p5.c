@@ -14,28 +14,30 @@ int main() {
     printf("Enter your choice: ");
     scanf("%d", &choice);
 
-    printf("Enter temperature: ");
-    scanf("%f", &temp);
-
-    if (choice == 1) {
-        // TODO: Call celsiusToFahrenheit and display result
-        printf("Conversion not implemented yet.\n");
+if (choice == 1) {
+        printf("Enter temperature in Celsius: ");
+        scanf("%f", &temp);
+        convertedTemp = celsiusToFahrenheit(temp);
+        printf("Temperature in Fahrenheit: %.2f°F\n", convertedTemp);
     } else if (choice == 2) {
-        // TODO: Call fahrenheitToCelsius and display result
-        printf("Conversion not implemented yet.\n");
+        printf("Enter temperature in Fahrenheit: ");
+        scanf("%f", &temp);
+        convertedTemp = fahrenheitToCelsius(temp);
+        printf("Temperature in Celsius: %.2f°C\n", convertedTemp);
     } else {
-        printf("Invalid choice!\n");
+        printf("Invalid choice! Please enter 1 or 2.\n");
     }
 
     return 0;
+
 }
 
 // TODO: Implement the celsiusToFahrenheit function
 float celsiusToFahrenheit(float celsius) {
-    return 0.0; 
+     return (celsius * 9.0 / 5.0) + 32.0;
 }
 
 // TODO: Implement the fahrenheitToCelsius function
 float fahrenheitToCelsius(float fahrenheit) {
-    return 0.0; 
+    return (fahrenheit - 32.0) * 5.0 / 9.0; 
 }

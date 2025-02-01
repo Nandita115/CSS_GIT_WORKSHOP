@@ -1,12 +1,15 @@
 #include <stdio.h>
 
+// Function prototypes
 void showMenu();
 int add(int a, int b);
 int subtract(int a, int b);
-// TODO: Implement multiply and divide functions.
+int multiply(int a, int b);
+float divide(int a, int b);
 
 int main() {
     int choice, num1, num2, result;
+    float divResult;
 
     while (1) {
         showMenu();
@@ -31,12 +34,16 @@ int main() {
                 printf("Result: %d\n", result);
                 break;
             case 3:
-                // TODO: Call the multiply function and display the result.
-                printf("Multiply function is not implemented yet.\n");
+                result = multiply(num1, num2);
+                printf("Result: %d\n", result);
                 break;
             case 4:
-                // TODO: Call the divide function and handle division by zero.
-                printf("Divide function is not implemented yet.\n");
+                if (num2 == 0) {
+                    printf("Error: Division by zero is not allowed.\n");
+                } else {
+                    divResult = divide(num1, num2);
+                    printf("Result: %.2f\n", divResult);
+                }
                 break;
             default:
                 printf("Invalid choice! Please try again.\n");
@@ -46,6 +53,7 @@ int main() {
     return 0;
 }
 
+// Function definitions
 void showMenu() {
     printf("\n*** Simple Calculator ***\n");
     printf("1. Add\n");
@@ -54,6 +62,22 @@ void showMenu() {
     printf("4. Divide\n");
     printf("0. Exit\n");
     printf("*************************\n");
+}
+
+int add(int a, int b) {
+    return a + b;
+}
+
+int subtract(int a, int b) {
+    return a - b;
+}
+
+int multiply(int a, int b) {
+    return a * b;
+}
+
+float divide(int a, int b) {
+    return (float)a / b; // Explicit cast to float for division
 }
 
 
